@@ -32,7 +32,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", ".hbs");
 
 app.get("/", function (req, res) {
-  res.render("index", { title: "Jobby" });
+  res.render("index", { title: "Intern Net" });
 });
 
 app.get("/search", function (req, res) {
@@ -65,7 +65,7 @@ app.get("/search", function (req, res) {
       .then(function (response) {
         // console.log(response);
         res.render("search", {
-          title: "Jobby",
+          title: "InternNet",
           jobs: response,
         });
       })
@@ -74,7 +74,7 @@ app.get("/search", function (req, res) {
         console.log(error);
       });
   } else {
-    res.render("search", { title: "Jobby" });
+    res.render("search", { title: "InternNet" });
   }
 });
 
