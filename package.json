@@ -19,6 +19,7 @@
     "express-ip": "^1.0.1",
     "geoip-lite": "^1.2.2",
     "indeed-job-scraper": "^4.0.1",
-    "indeed-scraper": "^3.1.4"
+    "indeed-scraper": "^3.1.4",
+    "resume-parser": "^1.1.0"
   }
 }

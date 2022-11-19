@@ -37,7 +37,6 @@ app.get("/", function (req, res) {
 
 app.get("/search", function (req, res) {
   queries = req.query;
-  //   let url = `https://indreed.herokuapp.com/api/jobs`;
   if (queries) {
     getJobsList({
       query: queries.q,
@@ -49,27 +48,36 @@ app.get("/search", function (req, res) {
       location: "Montreal",
     })
       .then(function (response) {
-        // console.log("RESPONSE: " + JSON.stringify(response[0]));
         let ret = [];
-        // console.log(JSON.parse(JSON.stringify(response[0]))["job-title"]);
-
+        console.log(JSON.stringify(response[0]));
         response.forEach((object) => {
           let s = JSON.parse(JSON.stringify(object));
           let job_title = s["job-title"];
-          let job_summary = s["company-name"];
-          ret.push({ title: job_title, summary: job_summary });
+          let job_company = s["company-name"];
+          let job_link = s["job-link"];
+          let job_location = s["company-location"];
+          let job_salary = s["job-salary"];
+          let job_desc = s["job-snippet"];
+          let job_posted = s["post-date"];
+          ret.push({
+            title: job_title,
+            company: job_company,
+            link: job_link,
+            desc: job_desc,
+            location: job_location,
+            salary: job_salary,
+            posted: job_posted,
+          });
         });
 
         return ret;
       })
       .then(function (response) {
-        // console.log(response);
         res.render("search", {
           title: "InternNet",
           jobs: response,
         });
       })
-      .then(release)
       .catch(function (error) {
         console.log(error);
       });
