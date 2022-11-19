@@ -1,0 +1,24 @@
+{
+  "name": "internNet",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "job",
+    "indeed",
+    "indreed"
+  ],
+  "author": "Karim Jabbour",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-ip": "^1.0.1",
+    "geoip-lite": "^1.2.2",
+    "indeed-job-scraper": "^4.0.1",
+    "indeed-scraper": "^3.1.4"
+  }
+}
