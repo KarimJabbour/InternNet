@@ -13,7 +13,86 @@ a:link {
   left: 470px;
   width: 300px;
 }
+body,
+html {
+  height: 100%;
+}
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
 
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("/images/frontpg.png"), url("/images/frontpg.gif");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.box {
+  position: relative;
+}
+header {
+  position: relative;
+  transform: translateY(0);
+  opacity: 0;
+}
+
+header.active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 3s all ease;
+}
+.input {
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+  background: none;
+  border: 4px solid deeppink;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-family: Comic Sans MS;
+  font-size: 26px;
+  color: deeppink;
+  outline: none;
+  transition: 0.5s;
+}
+.box:hover input {
+  width: 350px;
+  background: #3b3640;
+  border-radius: 10px;
+}
+.box i {
+  position: relative;
+  top: 50%;
+  right: 15px;
+  transform: translate(-50%, -50%);
+  font-size: 26px;
+  color: deeppink;
+  transition: 0.2s;
+}
+.box:hover i {
+  opacity: 0;
+  z-index: -1;
+}
+.search {
+  position: relative;
+  height: 100px;
+  /* width: 300px; */
+}
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -4592,6 +4671,16 @@ input.mdl-button[type="submit"] {
   background: rgb(255, 255, 255);
   border-radius: 20px;
   box-sizing: border-box;
+
+  /* position: relative; */
+  transform: translateY(10px);
+  opacity: 1;
+}
+.mdl-card.active {
+  transition: 3s ease-in;
+
+  transform: translateY(10);
+  opacity: 0.7;
 }
 
 .mdl-card__media {
@@ -5982,6 +6071,12 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 /* Shadows */
 /* Animations */
 /* Dialog */
+footer {
+  opacity: 1;
+  bottom: 0px;
+  width: 100%;
+  height: 20px;
+}
 .mdl-mega-footer {
   padding: 16px 40px;
   color: rgb(158, 158, 158);
@@ -8347,6 +8442,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 
 .mdl-layout__header-row {
+  bottom: 0;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
