@@ -1,11 +1,25 @@
 <html lang="en">
 
   <head>
+    <script>window.onbeforeunload = function () { window.scrollTo(0, 0); }</script>
+    <script>
+      function triggerButton(){ if (document.getElementById('query').value=="")
+      {document.getElementById('query').value="Developer";
+      document.getElementById('myButton').click() } }
+
+    </script>
+    <script>
+      function validateForm() { var x = document.forms["myForm"]["q"].value; if
+      (x == "") { alert("Search must be filled out"); return false; } }
+    </script>
+    {{! <script>
+      function deflt() { document.getElementById("query").
+      "Developer"; }
+    </script> }}
     {{! <script
       src="https://kit.fontawesome.com/02995bb42f.js"
       crossorigin="anonymous"
     ></script> }}
-    <script>window.onbeforeunload = function () { window.scrollTo(0, 0); }</script>
     <script>
       function reveal() { var reveals = document.querySelectorAll(".mdl-card");
       for (var i = 0; i < reveals.length; i++) { var windowHeight =
@@ -90,7 +104,12 @@
 
       </div> }}
       <div class="search-ribbon">
-        <form method="GET">
+        <form
+          name="myForm"
+          method="GET"
+          onsubmit="return validateForm()"
+          required
+        >
           <div
             class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
           >
@@ -99,10 +118,12 @@
               type="text"
               id="query"
               name="q"
+              value=""
             />
             <label class="mdl-textfield__label" for="query">Search</label>
           </div>
           <button
+            id="myButton"
             type="submit"
             class="mdl-button query-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
             style="background-color: rgb(168, 12, 196)"

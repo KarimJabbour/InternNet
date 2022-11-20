@@ -2,7 +2,7 @@ const axios = require("axios");
 const express = require("express");
 const app = express();
 const expressip = require("express-ip");
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3000;
 const path = require("path");
 
 // const indeed = require("indeed-scraper");
@@ -36,7 +36,10 @@ app.set("view engine", ".hbs");
 // });
 
 app.get("/", function (req, res) {
-  queries = req.query;
+  let queries = req.query;
+  if (queries == "" || queries == null || queries == undefined) {
+    queries = "software";
+  }
   if (queries) {
     getJobsList({
       query: queries.q,
