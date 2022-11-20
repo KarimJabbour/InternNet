@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "start:dev": "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "keywords": [
     "job",
@@ -21,6 +20,7 @@
     "geoip-lite": "^1.2.2",
     "indeed-job-scraper": "^4.0.1",
     "indeed-scraper": "^3.1.4",
+    "nodemon": "^2.0.20",
     "resume-parser": "^1.1.0"
   }
 }
