@@ -2,7 +2,7 @@ const axios = require("axios");
 const express = require("express");
 const app = express();
 const expressip = require("express-ip");
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 80;
 const path = require("path");
 
 // const indeed = require("indeed-scraper");
@@ -31,11 +31,11 @@ app.use(express.static(path.join(__dirname, "assets")));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", ".hbs");
 
-app.get("/", function (req, res) {
-  res.render("index", { title: "Intern Net" });
-});
+// app.get("/", function (req, res) {
+//   res.render("index", { title: "Intern Net" });
+// });
 
-app.get("/search", function (req, res) {
+app.get("/", function (req, res) {
   queries = req.query;
   if (queries) {
     getJobsList({
@@ -49,7 +49,7 @@ app.get("/search", function (req, res) {
     })
       .then(function (response) {
         let ret = [];
-        console.log(JSON.stringify(response[0]));
+        // console.log(JSON.stringify(response[0]));
         response.forEach((object) => {
           let s = JSON.parse(JSON.stringify(object));
           let job_title = s["job-title"];
