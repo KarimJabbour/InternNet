@@ -1,6 +1,7 @@
 # Intern Net
 
 An app to give you the latest internships
+Visit www.intern-net.ca
 
 # Installation and Usage
 
